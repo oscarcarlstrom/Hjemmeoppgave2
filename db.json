@@ -1,0 +1,49 @@
+{
+  "logg": [
+    {
+      "id": 5,
+      "seddelnummer": 2564,
+      "volum": 95
+    },
+    {
+      "id": 6,
+      "seddelnummer": 9652,
+      "volum": 36
+    },
+    {
+      "id": 7,
+      "seddelnummer": 3695,
+      "volum": 89
+    },
+    {
+      "id": 8,
+      "seddelnummer": "4564",
+      "volum": "4566"
+    },
+    {
+      "seddelnummer": "1234",
+      "volum": "456",
+      "id": 9
+    },
+    {
+      "seddelnummer": "6666",
+      "volum": "666",
+      "id": 10
+    },
+    {
+      "seddelnummer": "1321",
+      "volum": "456",
+      "id": 11
+    },
+    {
+      "seddelnummer": "1212",
+      "volum": "21",
+      "id": 12
+    },
+    {
+      "seddelnummer": "1231",
+      "volum": "1212",
+      "id": 13
+    }
+  ]
+}
