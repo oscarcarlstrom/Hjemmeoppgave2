@@ -1,0 +1,32 @@
+<div data-ng-controller="loggController" id="container">
+  <header>
+    <h1>Tømmelogg</h1>
+  </header>
+  <div data-ng-show="!visModal">
+    <table class="content">
+      <tr data-ng-repeat="l in logg" data-ng-click="showActions = !showActions" data-ng-swipe-left="showActions = true" data-ng-swipe-right="showActions = false">
+        <td>{{ l.seddelnummer }}</td>
+        <td colspan="{{ showActions ? 1 : 2}}">{{ l.volum | number }}
+          <span class="potens"><!--
+          --><span class="grunntall">m</span><!--
+          --><span class="eksponent">3</span>
+          </span>
+        </td>
+        <td data-ng-show="showActions">
+          <button class="delete-btn" data-ng-click="slett($index)"><i class="fas fa-trash" aria-hidden="true"></i></button>
+        </td>
+      </tr>
+    </table>
+
+    <nav>
+      <div id="add-btn-container">
+        <div class="button-outline"></div>
+        <button id="add-btn" data-ng-click="goTo('ny')"><i class="fas fa-plus" aria-hidden="true"></i></button>
+      </div>
+      <footer>
+        <!--<button id="send-btn"><i class="fas fa-paper-plane" aria-hidden="true"></i> Send inn</button>
+        <span id="date">{{ today | date : "dd.MM.yyyy" }}</span>-->
+      </footer>
+    </nav>
+  </div>
+</div>

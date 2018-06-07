@@ -1,0 +1,116 @@
+//Variables
+$fontLight: 300 1em 'Open Sans', sans-serif;
+$fontRegular: 400 1em 'Open Sans', sans-serif;
+$fontBold: 600 1em 'Open Sans', sans-serif;
+
+$primaryColor: #009681;
+$black: #006153e0;
+$gray: #909090;
+$shadowGray: #8c8c8c;
+$lightGray: #e4e4e4;
+$white: white;
+
+$borderRadius: 4px;
+
+//Super classes
+%center-block {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+%default-font {
+  font: $fontLight;
+  color: $black;
+}
+
+%shadowBox {
+  box-shadow: 0px 3px 13px $shadowGray;
+  border-radius: $borderRadius;
+}
+
+@mixin animation($name, $duration, $timingFunction, $iterationCount) {
+  -ms-animation: $name $duration $timingFunction $iterationCount;
+	-o-animation: $name $duration $timingFunction $iterationCount;
+  -moz-animation: $name $duration $timingFunction $iterationCount;
+  -webkit-animation: $name $duration $timingFunction $iterationCount;
+  animation: $name $duration $timingFunction $iterationCount;
+}
+
+@mixin transform($functions...) {
+  -ms-transform: $functions;
+  -o-transform: $functions;
+  -moz-transform: $functions;
+  -webkit-transform: $functions;
+  transform: $functions;
+}
+
+//Animations
+@keyframes spin {
+    0% { @include transform(rotate(0deg)); }
+    100% { @include transform(rotate(360deg)); }
+}
+
+body {
+  @extend %default-font;
+}
+
+.loading {
+
+  &::after {
+    $size: 50px;
+
+    content: "";
+    border: 2px solid $lightGray;
+    border-top-color: $primaryColor;
+    border-radius: 50%;
+    width: $size;
+    height: $size;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    top: 33vh;
+    //box-shadow: 0px 0px 8px #354a5d;
+    @include animation(spin, 700ms, linear, infinite);
+  }
+}
+
+#container {
+  max-width: 50em;
+  @extend %center-block;
+}
+
+.card {
+  @extend %shadowBox;
+  margin-bottom: 2em;
+  padding: 1em 1em 2.5em 1em;
+
+  h2 {
+    margin-top: 0;
+  }
+}
+
+#measures {
+  list-style: none;
+  padding-left: 0;
+  color: $primaryColor;
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 10rem;
+  @extend %center-block;
+}
+
+@media only screen and (min-width: 27rem) {
+  #measures {
+    justify-content: space-between;
+    max-width: none;
+    margin: 0;
+  }
+
+  .card {
+      padding: 2em 2em 3em 2em;
+  }
+}

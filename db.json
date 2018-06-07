@@ -3,47 +3,254 @@
     {
       "id": 5,
       "seddelnummer": 2564,
-      "volum": 95
+      "volum": 12,
+      "dato": "25.05.2018"
     },
     {
       "id": 6,
       "seddelnummer": 9652,
-      "volum": 36
-    },
-    {
-      "id": 7,
-      "seddelnummer": 3695,
-      "volum": 89
-    },
-    {
-      "id": 8,
-      "seddelnummer": "4564",
-      "volum": "4566"
+      "volum": 5,
+      "dato": "25.05.2018"
     },
     {
       "seddelnummer": "1234",
-      "volum": "456",
-      "id": 9
+      "volum": "6",
+      "id": 9,
+      "dato": "25.05.2018"
     },
     {
       "seddelnummer": "6666",
-      "volum": "666",
-      "id": 10
+      "volum": "6",
+      "id": 10,
+      "dato": "25.05.2018"
     },
     {
       "seddelnummer": "1321",
-      "volum": "456",
-      "id": 11
+      "volum": "16",
+      "id": 11,
+      "dato": "25.05.2018"
     },
     {
       "seddelnummer": "1212",
       "volum": "21",
-      "id": 12
+      "id": 12,
+      "dato": "26.05.2018"
     },
     {
       "seddelnummer": "1231",
-      "volum": "1212",
-      "id": 13
+      "volum": "11",
+      "id": 13,
+      "dato": "26.05.2018"
+    },
+    {
+      "seddelnummer": "3421",
+      "volum": "13",
+      "id": 14,
+      "dato": "26.05.2018"
+    },
+    {
+      "seddelnummer": "9938",
+      "volum": "14",
+      "id": 15,
+      "dato": "27.05.2018"
+    },
+    {
+      "seddelnummer": "1231",
+      "volum": "19",
+      "id": 16,
+      "dato": "27.05.2018"
+    },
+    {
+      "seddelnummer": "6666",
+      "volum": "8",
+      "id": 17,
+      "dato": "27.05.2018"
+    },
+    {
+      "seddelnummer": "5002",
+      "volum": "16",
+      "id": 18,
+      "dato": "27.05.2018"
+    },
+    {
+      "seddelnummer": "1234",
+      "volum": "17",
+      "id": 19,
+      "dato": "28.05.2018"
+    },
+    {
+      "seddelnummer": "1521",
+      "volum": "21",
+      "id": 20,
+      "dato": "28.05.2018"
+    },
+    {
+      "seddelnummer": "0000",
+      "volum": "12",
+      "id": 21,
+      "dato": "28.05.2018"
+    },
+    {
+      "seddelnummer": "0000",
+      "volum": "6",
+      "id": 22,
+      "dato": "29.05.2018"
+    },
+    {
+      "seddelnummer": "5000",
+      "volum": "2",
+      "id": 23,
+      "dato": "29.05.2018"
+    },
+    {
+      "seddelnummer": "1515",
+      "volum": "12",
+      "id": 24,
+      "dato": "29.05.2018"
+    },
+    {
+      "seddelnummer": "1233",
+      "volum": "13",
+      "id": 25,
+      "dato": "29.05.2018"
+    },
+    {
+      "seddelnummer": "1445",
+      "volum": "5",
+      "id": 26,
+      "dato": "30.05.2018"
+    },
+    {
+      "seddelnummer": "456",
+      "volum": "15",
+      "id": 27,
+      "dato": "30.05.2018"
+    },
+    {
+      "seddelnummer": "4565",
+      "volum": "6",
+      "id": 28,
+      "dato": "30.05.2018"
+    },
+    {
+      "seddelnummer": "5000",
+      "volum": "12",
+      "id": 29,
+      "dato": "30.05.2018"
+    },
+    {
+      "seddelnummer": "1232",
+      "volum": "33",
+      "id": 30,
+      "dato": "31.05.2018"
+    },
+    {
+      "seddelnummer": "0000",
+      "volum": "12",
+      "dato": "31.05.2018",
+      "id": 31
+    },
+    {
+      "seddelnummer": "1232",
+      "volum": "33",
+      "id": 30,
+      "dato": "01.06.2018"
+    },
+    {
+      "seddelnummer": "0000",
+      "volum": "12",
+      "dato": "01.06.2018",
+      "id": 31
+    },
+    {
+      "seddelnummer": "1231",
+      "volum": "15",
+      "dato": "03.06.2018",
+      "id": 32
+    },
+    {
+      "seddelnummer": "1213",
+      "volum": "12",
+      "dato": "03.06.2018",
+      "id": 33
+    },
+    {
+      "seddelnummer": "1231",
+      "volum": "12",
+      "dato": "04.06.2018",
+      "id": 34
+    },
+    {
+      "seddelnummer": "2123",
+      "volum": "8",
+      "dato": "04.06.2018",
+      "id": 35
+    },
+    {
+      "seddelnummer": "1321",
+      "volum": "13",
+      "dato": "05.06.2018",
+      "id": 36
+    },
+    {
+      "seddelnummer": "5465",
+      "volum": "16",
+      "dato": "05.06.2018",
+      "id": 37
+    },
+    {
+      "seddelnummer": "4564",
+      "volum": "12",
+      "dato": "05.06.2018",
+      "id": 38
+    },
+    {
+      "seddelnummer": "6456",
+      "volum": "9",
+      "dato": "05.06.2018",
+      "id": 39
+    },
+    {
+      "seddelnummer": "5648",
+      "volum": "10",
+      "dato": "05.06.2018",
+      "id": 40
+    },
+    {
+      "seddelnummer": "4654",
+      "volum": "6",
+      "dato": "05.06.2018",
+      "id": 41
+    },
+    {
+      "seddelnummer": "1231",
+      "volum": "12",
+      "dato": "05.06.2018",
+      "id": 42
+    },
+    {
+      "seddelnummer": "1231",
+      "volum": "21",
+      "dato": "05.06.2018",
+      "id": 43
+    },
+    {
+      "seddelnummer": "1232",
+      "volum": "11",
+      "dato": "06.06.2018",
+      "id": 44
+    },
+    {
+      "seddelnummer": "7897",
+      "volum": "7",
+      "dato": "06.06.2018",
+      "id": 45
+    },
+    {
+      "seddelnummer": "5675",
+      "volum": "15",
+      "dato": "06.06.2018",
+      "id": 46
     }
   ]
 }

@@ -1,0 +1,33 @@
+<div data-ng-controller="nyController" id="container">
+  <header>
+    <h1>Ny tømming</h1>
+  </header>
+  <div class="content">
+    <form>
+      <div class="label-float" data-ng-class="{ empty: !seddelnummer.length }">
+        <div>
+          <label for="seddelnr-input">Seddelnummer</label>
+        </div>
+        <div>
+          <input id="seddelnr-input" data-ng-model="seddelnummer" type="text" placeholder="Seddelnummer" pattern="[0-9]*" data-ng-pattern="onlyNumbers" maxlength="4" autofocus>
+        </div>
+      </div>
+      <div class="label-float" data-ng-class="{ empty: !antall.length }">
+        <div>
+          <label for="antall-input">Antall kubikk</label>
+        </div>
+        <div>
+          <input id="antall-input" data-ng-model="antall" type="text" placeholder="Antall kubikk" pattern="[0-9]*" data-ng-pattern="onlyNumbers">
+          <span class="potens"><!--
+          --><span class="grunntall">m</span><!--
+          --><span class="eksponent">3</span>
+          </span>
+        </div>
+      </div>
+      <div class="modal-buttons">
+        <button data-ng-click="goTo('')">Avbryt</button>
+        <button data-ng-click="leggTilNyTomming()" data-ng-disabled="!antall.length || !seddelnummer.length">OK</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,345 @@
+//Variables
+$fontLight: 300 1em 'Open Sans', sans-serif;
+$fontRegular: 400 1em 'Open Sans', sans-serif;
+$fontBold: 600 1em 'Open Sans', sans-serif;
+
+$primaryColor: #009681;
+$dangerColor: #CA524A;
+$black: #4A4A4A;
+$gray: #909090;
+$lightGray: #e4e4e4;
+$white: white;
+
+//Super classes
+%center-block {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+%default-font {
+  font: $fontLight;
+  color: $black;
+}
+
+%round-centered-btn {
+  position: absolute;
+  padding: 1em;
+  height: 3.4em;
+  width: 3.4em;
+  border-radius: 50%;
+  border: none;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+%nowrap {
+  white-space: nowrap;
+}
+
+//Mixins
+@mixin user-select($val) {
+  -ms-user-select: $val;
+  -moz-user-select: $val;
+  -webkit-user-select: $val;
+  user-select: $val;
+}
+
+@mixin placeholder-color($color) {
+  /* Mozilla Firefox 19+ */
+  ::-moz-placeholder {
+    color: $color;
+  }
+  /* IE10+ */
+  :-ms-input-placeholder {
+    color: $color;
+  }
+  /* web-kit */
+  ::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+
+@mixin placeholder($color, $font) {
+  /* Mozilla Firefox 19+ */
+  ::-moz-placeholder {
+    font-family: $font;
+  }
+  /* IE10+ */
+  :-ms-input-placeholder {
+    font-family: $font;
+  }
+  /* web-kit */
+  ::-webkit-input-placeholder {
+    font-family: $font;
+  }
+
+  @include placeholder-color($color);
+}
+
+@mixin animation($name, $duration, $timingFunction, $iterationCount) {
+  -ms-animation: $name $duration $timingFunction $iterationCount;
+	-o-animation: $name $duration $timingFunction $iterationCount;
+  -moz-animation: $name $duration $timingFunction $iterationCount;
+  -webkit-animation: $name $duration $timingFunction $iterationCount;
+  animation: $name $duration $timingFunction $iterationCount;
+}
+
+@mixin transform($functions...) {
+  -ms-transform: $functions;
+  -o-transform: $functions;
+  -moz-transform: $functions;
+  -webkit-transform: $functions;
+  transform: $functions;
+}
+
+//Animations
+@keyframes spin {
+    0% { @include transform(rotate(0deg)); }
+    100% { @include transform(rotate(360deg)); }
+}
+
+body {
+  @extend %default-font;
+}
+
+.loading {
+
+  &::after {
+    $size: 50px;
+
+    content: "";
+    border: 2px solid $lightGray;
+    border-top-color: $primaryColor;
+    border-radius: 50%;
+    width: $size;
+    height: $size;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    top: 33vh;
+    //box-shadow: 0px 0px 8px #354a5d;
+    @include animation(spin, 700ms, linear, infinite);
+  }
+}
+
+#container {
+  width: 95%;
+  position: relative;
+  @extend %center-block;
+}
+
+header {
+  border-bottom: 1px solid $lightGray;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $white;
+
+  h1 {
+    font: $fontBold;
+    font-size: 1.2rem;
+    text-align: center;
+    color: $primaryColor;
+  }
+}
+
+.content {
+  margin: 3rem 0 6rem 0;
+}
+
+button {
+  @include user-select(none);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  tr {
+    :not(:first-child) {
+      text-align: right;
+      @extend %nowrap;
+    }
+
+    &:not(:last-child) {
+      td:not(:last-child) {
+        border-bottom: 1px solid $lightGray;
+      }
+    }
+
+    td {
+      font-size: 1.2em !important;
+
+      &:first-child {
+        font: $fontRegular;
+
+        &::before {
+          content: "tank: ";
+        }
+      }
+
+      &:not(:last-child) {
+        padding: 1.3em 0;
+      }
+
+      &:last-child {
+        padding: 0;
+        width: 4em;
+      }
+
+      .potens {
+        font-size: 0.8em;
+        height: 1em;
+      }
+
+      .delete-btn {
+        color: white;
+        background-color: $dangerColor;
+        padding: 1.35em;
+        font-size: 1em;
+        border: none;
+        transition: padding linear 2ms;
+      }
+
+      &.ng-hide .delete-btn {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.potens {
+  display: inline-block;
+  vertical-align: bottom;
+  padding-left: 0.1em;
+
+  .grunntall {
+    font-size: 1em;
+  }
+
+  .eksponent {
+    font-size: 0.7em;
+    vertical-align: top;
+  }
+}
+
+nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  box-sizing: border-box;
+
+  #add-btn-container {
+    position: relative;
+
+    .button-outline {
+      @extend %round-centered-btn;
+      background-color: $white;
+      font-size: 0.9rem;
+      top: -2.5rem;
+    }
+    #add-btn {
+      @extend %round-centered-btn;
+      color: $white;
+      background-color: $primaryColor;
+      font-size: 1.2rem;
+      top: -2.35rem;
+    }
+  }
+
+  footer {
+    background: $black;
+    padding: 1.2em;
+    width: 100%;
+    min-height: 3.2em; //I tilfelle vi vil fjerne innhold
+    box-sizing: border-box;
+    font: $fontRegular;
+
+    #send-btn {
+      font: inherit;
+      color: $white;
+      background-color: transparent;
+      border: none;
+      padding: 0;
+    }
+
+    #date {
+      float: right;
+      color: $white;
+    }
+  }
+}
+
+form {
+  padding-top: 2.4rem;
+  width: 80%;
+  @extend %center-block;
+
+  .label-float {
+    position: relative;
+    margin-bottom: 1.2rem;
+    font: $fontRegular;
+
+    &.empty {
+      @include placeholder($gray, $fontRegular);
+      label {
+        display: none;
+      }
+      .potens {
+        color: $gray;
+      }
+    }
+
+    &:not(.empty) {
+      @include placeholder-color(transparent);
+      input {
+        padding-top: calc(2.4rem + 1px) !important;
+      }
+      .potens {
+        color: $black;
+      }
+    }
+
+    label {
+      font: inherit;
+      position: absolute;
+      margin-left: 1.3rem;
+      padding-top: 1.2rem;
+      font-size:  1rem;
+    }
+
+    input {
+      font: inherit;
+      padding: calc(1.2rem + 1px) 1.2rem 1.2rem 1.2rem;
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 2px;
+      border: 1px solid $gray;
+      font-size: 1.2rem;
+    }
+
+    .potens {
+      font: $fontBold;
+      font-size: 1.2em;
+      position: absolute;
+      bottom: 1.3rem;
+      right: 1.2rem;
+    }
+  }
+
+  .modal-buttons {
+    text-align: right;
+
+    button {
+      background-color: transparent;
+      border-color: transparent;
+      color: $primaryColor;
+      font-size: 1.2em;
+    }
+  }
+}

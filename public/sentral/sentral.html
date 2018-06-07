@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oversikt</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="angularjs-gauge.min.js"></script>
+  <script src="Chart.min.js"></script>
+  <script src="angular-chart.min.js"></script>
+  <script src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+  <link href="style.min.css" rel="stylesheet">
+</head>
+<body>
+  <div data-ng-app="app" data-ng-controller="mainController" id="container" data-ng-class="{ loading: isLoading() }">
+    <h1>Sentral tjeneste</h1>
+    <div class="card">
+      <h2>Dagens oversikt <!-- {{ dagensDato }} --></h2>
+        <ul id="measures">
+          <li class="measure-container">
+            <ng-gauge size="150" type="full" thick="4" min="0" max="159" value="dagensTotaleVolum" cap="round" label="Septik" foreground-color="#009681" background-color="#ececec" append="m³"></ng-gauge>
+          </li>
+          <li class="measure-container">
+            <ng-gauge size="150" type="full" thick="4" min="0" max="262" value="dagensTotaleAntall" cap="round" label="Tømminger" foreground-color="#009681" background-color="#ececec" append="st."></ng-gauge>
+          </li>
+          <li class="measure-container">
+            <ng-gauge size="150" type="full" thick="4" min="0" max="75" value="72" cap="round" label="Biler" foreground-color="#009681" background-color="#ececec" append="st."></ng-gauge>
+          </li>
+        </ul>
+        <!--<button>Vis mer</button>-->
+    </div>
+    <div class="card">
+    <h2>Total volum tømt siste {{ antallDager }} dager</h2>
+      <canvas class="chart chart-line" chart-data="dataVolume" chart-labels="labels" chart-series="seriesVolume" chart-options="chartOptionsVolume"></canvas>
+    </div>
+    <div class="card">
+    <h2>Totalt antall tømminger siste {{ antallDager }} dager</h2>
+      <canvas class="chart chart-line" chart-data="dataCount" chart-labels="labels" chart-series="seriesCount" chart-options="chartOptionsCount"></canvas>
+    </div>
+  </div>
+</body>
+</html>
